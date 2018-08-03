@@ -4,6 +4,16 @@
     background-color: blue;
     padding: 2px;
     color: white;
-    border: 3px solid green;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.marker-selected {
+    font-size: 12px;
+    width: 50px;
+    background-color: yellow;
+    color: black;
+    padding: 2px;
+    border-radius: 5px;
     text-align: center;
 }

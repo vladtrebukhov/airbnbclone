@@ -4,7 +4,12 @@ import "./marker.css";
 class Marker extends React.Component {
   state = {};
   render() {
-    return <div className="marker">{this.props.text}</div>;
+    let classes = "marker";
+
+    if (this.props.selected) {
+      classes += "-selected";
+    }
+    return <div className={classes}>{this.props.text}</div>;
   }
 }
 

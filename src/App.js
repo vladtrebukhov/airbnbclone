@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Flat from "./components/flat.js";
-import Search from "./components/search.js";
 import GoogleMapReact from "google-map-react";
 import Marker from "./components/marker.js";
 
@@ -11,7 +10,9 @@ class App extends Component {
     super(props);
     this.state = {
       flats: [],
-      selectedFlat: null
+      allFlats: [],
+      selectedFlat: null,
+      search: null
     };
   }
 
@@ -24,7 +25,8 @@ class App extends Component {
       })
       .then(data => {
         this.setState({
-          flats: data
+          flats: data,
+          allFlats: data
         });
       });
   }
@@ -36,6 +38,16 @@ class App extends Component {
     });
   };
 
+  handleSearch = event => {
+    this.setState({
+      search: event.target.value,
+      flats: this.state.allFlats.filter(
+        flat =>
+          new RegExp(event.target.value, "i").exec(flat.name) ||
+          new RegExp(event.target.value, "i").exec(flat.price)
+      )
+    });
+  };
   render() {
     let center = {
       lat: 48.8566,
@@ -53,7 +65,12 @@ class App extends Component {
       <div className="app">
         <div className="main">
           <div className="search">
-            <Search />
+            <input
+              type="text"
+              placeholder="Search"
+              value={this.state.search}
+              onChange={this.handleSearch}
+            />
           </div>
           <div className="flats">
             {this.state.flats.map(flat => {
@@ -76,6 +93,7 @@ class App extends Component {
                   lat={flat.lat}
                   lng={flat.lng}
                   text={flat.price + " " + flat.priceCurrency}
+                  selected={flat === this.state.selectedFlat}
                 />
               );
             })}
