@@ -1,0 +1,37 @@
+.app {
+  display: flex;
+}
+
+.main {
+  flex-basis: 60%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(237, 237, 237);
+}
+
+.search {
+  width: 95%;
+  height: 50px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.flats {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.flat {
+  flex-basis: calc(50% - 20px);
+  margin: 5px;
+}
+
+.map {
+  flex-grow: 1;
+  height: 100vh;
+  top: 0;
+  position: sticky;
+}
