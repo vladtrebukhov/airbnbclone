@@ -1,6 +1,7 @@
 {
   "name": "myapp",
   "version": "0.1.0",
+  "homepage": "vladtrebukhov.com/airbnbclone",
   "private": true,
   "homepage": "https://vladtrebukhov.github.io/airbnbclone",
   "dependencies": {
