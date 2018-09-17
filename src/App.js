@@ -39,6 +39,7 @@ class App extends Component {
   };
 
   handleSearch = event => {
+    let value = event.target.value;
     this.setState({
       search: event.target.value,
       flats: this.state.allFlats.filter(
