@@ -2,6 +2,7 @@
   "name": "myapp",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://vladtrebukhov.github.io/airbnbclone",
   "dependencies": {
     "eslint": "^5.2.0",
     "google-map-react": "^1.0.5",
