@@ -1,6 +1,7 @@
 {
   "name": "myapp",
   "version": "0.1.0",
+  "homepage": "vladtrebukhov.com/airbnbclone",
   "private": true,
   "dependencies": {
     "eslint": "^5.2.0",
